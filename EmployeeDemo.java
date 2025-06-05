@@ -1,0 +1,32 @@
+class Employee {
+    public String name;
+    private double salary;
+    protected String department;
+    int empId;
+    public Employee(String name, int empId, double salary, String department) {
+        this.name = name;
+        this.empId = empId;
+        this.salary = salary;
+        this.department = department;
+    }
+    public void showPublicInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Emp ID: " + empId);
+    }
+    private void calculateBonus() {
+        System.out.println("Bonus: " + (salary * 0.10));
+    }
+    public void showSalaryAndBonus() {
+        System.out.println("Salary: ₹" + salary);
+        calculateBonus();  
+    }
+}
+public class EmployeeDemo {
+    public static void main(String[] args) {
+        Employee emp1 = new Employee("John", 101, 50000, "IT");
+        emp1.showPublicInfo();
+        System.out.println("Employee ID (default): " + emp1.empId);
+        System.out.println("Department (protected): " + emp1.department);
+        emp1.showSalaryAndBonus();
+    }
+}
