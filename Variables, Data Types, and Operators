@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class VDO {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter the employee name :");
+        String empname = input.nextLine();
+        System.out.println("Enter your basic salary :");
+        int sl=input.nextInt();
+        System.out.println("enter your house rent allowance :");
+        int hra=input.nextInt();
+        System.out.println("enter the tax rate in % :");
+        int tr=input.nextInt();
+        System.out.println("is the tx rate applicable");
+        boolean istre=input.nextBoolean();
+        int grosssalary= sl+hra;
+        float tax= istre ?(grosssalary*tr):0;
+        float netsalay=grosssalary-tax;
+        System.out.println("SALARY SLIP");
+        System.out.println("===========");
+        System.out.println("YOUR NAME = "+empname);
+        System.out.println("YOUR SALARY = "+ sl);
+        System.out.println("YOUR HOUSE RENT ALLOWANCE ="+hra);
+        System.out.println("YOUR TAX RATE ="+tr+"%");
+        System.out.println("YOUR GROSS SALARY ="+grosssalary);
+        System.out.println("YOUR NET SALARY = "+netsalay);
+
+    }
+}
